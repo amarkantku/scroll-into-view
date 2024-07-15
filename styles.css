@@ -1,0 +1,13 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  height: 2000px; /* Just for demonstration purposes */
+}
+
+#target {
+  margin-top: 1500px; /* Position the target element somewhere to scroll to */
+  padding: 20px;
+  background-color: yellow;
+}
