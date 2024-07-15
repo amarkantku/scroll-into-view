@@ -4,6 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Scroll to the target element when the button is clicked
   scrollButton.addEventListener('click', () => {
-      target.myScrollIntoView({ behavior: 'smooth' });
+      target.smoothScrollIntoView({ behavior: 'smooth' });
   });
 });
