@@ -2,7 +2,7 @@
   // Check if the browser supports scroll behavior smooth
   const supportsNativeSmoothScroll = 'scrollBehavior' in document.documentElement.style;
 
-  if (!supportsNativeSmoothScroll) {
+  if (supportsNativeSmoothScroll) {
       // Smooth scroll polyfill
       function smoothScrollTo(element, target, duration) {
           let start = element.scrollTop,
@@ -31,16 +31,16 @@
       };
 
       // Override scrollIntoView method
-      Element.prototype.scrollIntoView = function (options) {
+      Element.prototype.myScrollIntoView = function (options) {
           if (options === undefined || options === true) {
-              this.scrollIntoViewIfNeeded(true);
+              // this.scrollIntoViewIfNeeded(true);
           } else if (options.behavior === 'smooth') {
               let scrollContainer = this.closest('scroll-container') || document.documentElement;
               let targetPosition = this.offsetTop;
 
               smoothScrollTo(scrollContainer, targetPosition, 600);
           } else {
-              this.scrollIntoViewIfNeeded(false);
+             // this.scrollIntoViewIfNeeded(false);
           }
       };
   }
